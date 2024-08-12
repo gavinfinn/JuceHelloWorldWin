@@ -2,6 +2,23 @@
 
 #include <JuceHeader.h>
 
+struct Car 
+{
+    struct CarSeat
+    {
+        bool seatIsLeather;
+    };
+
+    int numOfWheels;
+    bool convertible;
+    CarSeat driverSeat;
+    CarSeat navigatorSeat;
+
+    bool switchSeats(CarSeat oldSeat, CarSeat newSeat);
+
+    void accelerate(float howFarToPushPedal);
+};
+
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
@@ -21,6 +38,7 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
+    juce::ToggleButton toggleButton;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
